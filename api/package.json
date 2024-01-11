@@ -1,0 +1,21 @@
+{
+  "name": "projet-collectif-extension-de-navigateur-leogtrvdl",
+  "version": "1.0.0",
+  "description": "projet-collectif-extension-de-navigateur-leogtrvdl created by GitHub Classroom",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adatechschool/projet-collectif-extension-de-navigateur-leogtrvdl.git"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adatechschool/projet-collectif-extension-de-navigateur-leogtrvdl/issues"
+  },
+  "homepage": "https://github.com/adatechschool/projet-collectif-extension-de-navigateur-leogtrvdl#readme"
+}

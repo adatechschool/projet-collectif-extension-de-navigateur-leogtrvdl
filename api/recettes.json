@@ -1,0 +1,14 @@
+{
+    "recette1":{
+        "name":"Pâtes",
+        "description":"la recette de pâtes la plus basique",
+        "recette":"Mettez de l'eau en fonction de la quantité de pâtes a bouillir et ajoutez une pincé de sel. Quand l'eau bout, ajoutez vos pâtes et laisser cuir autant de temps que l'indique l'embalage. Quand le temps est écouler, retirer l'eau du récipient et ne gardez que les pâtes",
+        "ingredients":"pâtes"
+    },
+    "recette2":{
+        "name":"Sauce champignon",
+        "description":"Sauce aux champignons et a la crème pour accompagner vos plats",
+        "recette":"Mettez à chauffer une poêle et découper en même temps des champignons de la manière qui vous convient. Quand la poêle est chaude, ajoutez une noisette de beurre ou un filet d'huile d'olive puis verser vos champignons. Faites revenir vos champignons de temps en temps jusqu'a la fin de la cuisson. A l'approche de la fin de la cuisson, passer a feux doux et ajoutez de la crème puis mélangez le tout jusqu'a que la crème ai bien pris la couleur des champignons. Enfin, retirez votre sauce crème champignons et ajouter là sur votre plat",
+        "ingredients":"Champignons, Crème (au choix), Beurre ou huile d'olive"
+    }
+}  
