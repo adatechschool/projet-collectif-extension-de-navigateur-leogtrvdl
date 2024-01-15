@@ -27,34 +27,45 @@ let list = [];
 function parseRecettes(api) {
     fetch(api)
         .then(function(recette){
-            console.log("1er .then")
+            console.log("1er .then");
             let data = recette.json();
-            console.log(data)
+            console.log(data);
             return(data);
         })
         .then(function(data){
-            console.log("2eme .then")
-            console.log(data)
-            //for (i=0; i<2; i++) {
-                name = data.recette1.name;
-                description = data.recette1.description;
-                recette = data.recette1.recette;
-                ingredients = data.recette1.ingredients;
+            console.log("2eme .then");
+            console.log(data);
+            for (i=0; i<data.recettes.length; i++) {
+                name = data.recettes[i].name;
+                description = data.recettes[i].description;
+                recette = data.recettes[i].recette;
+                ingredients = data.recettes[i].ingredients;
                 let plat = new Recette(name, description, recette, ingredients);
-                console.log(plat)
-                Recettes.push(plat[1]);
-            //}
+                for (j=0; j<plat.ingredients.length; j++) {
+                    list.push(data.recettes[i].ingredients[j]);
+                }
+                Recettes.push(plat);
+            }
         })
         .then(function affichage(){
-            console.log("3eme .then")
-            console.log(Recettes) 
+            console.log("3eme .then");
+            console.log(Recettes);
+            console.log("list 1 = " + list);
+            checkList(list);
+            console.log("list 2 = " + list);
         })
 }
 
-/*function listing(list) {
-    for (1=0; i < Recettes.length; i++) {
-
+function checkList(list) {
+    for (i=0; i < list.length; i++) {
+        for (j=0; j<list.length; j++) {
+            if (list[j] == list[i] && j != i) {
+                list.splice(j, 1);
+            } else {
+                
+            }
+        }
     }
-}*/
+}
 
 parseRecettes(api);
