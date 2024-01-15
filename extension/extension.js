@@ -68,3 +68,30 @@ function checkList(list) {
 }
 
 parseRecettes(api);
+
+function mettreEnEvidence(mot) {
+  const elements = document.getElementsByTagName("*");
+  for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    for (let j = 0; j < element.childNodes.length; j++) {
+      const node = element.childNodes[j];
+      if (node.nodeType === 3) { // Type de nœud texte
+        const texte = node.nodeValue.toLowerCase();
+        list.forEach(list => {
+          const regExp = new RegExp("\\b" + list + "\\b", "gi");
+          if (texte.match(regExp)) {
+            const span = document.createElement("span");
+            span.style.backgroundColor = "yellow";
+            span.textContent = node.nodeValue.replace(regExp, match => match);
+            node.replaceWith(span);
+          }
+        });
+      }
+    }
+  }
+}
+
+// Détecter les mots lors du chargement de la page
+window.onload = function() {
+  list.forEach(mot => mettreEnEvidence(mot));
+};
