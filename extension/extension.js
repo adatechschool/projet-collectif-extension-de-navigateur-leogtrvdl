@@ -53,13 +53,16 @@ function parseRecettes(api) {
             checkList(list);
             console.log(list);
         })
+        .then(function changeColor(){
+            changeWords();
+        })
 }
 
-function checkList(list) {
-    for (i=0; i < list.length; i++) {
-        for (j=0; j<list.length; j++) {
-            if (list[j] == list[i] && j != i) {
-                list.splice(j, 1);
+function checkList(mots) {
+    for (i=0; i < mots.length; i++) {
+        for (j=0; j<mots.length; j++) {
+            if (mots[j] == mots[i] && j != i) {
+                mots.splice(j, 1);
             } else {
                 
             }
@@ -67,31 +70,16 @@ function checkList(list) {
     }
 }
 
-parseRecettes(api);
-
-function mettreEnEvidence(mot) {
-  const elements = document.getElementsByTagName("*");
-  for (let i = 0; i < elements.length; i++) {
-    const element = elements[i];
-    for (let j = 0; j < element.childNodes.length; j++) {
-      const node = element.childNodes[j];
-      if (node.nodeType === 3) { // Type de nœud texte
-        const texte = node.nodeValue.toLowerCase();
-        list.forEach(list => {
-          const regExp = new RegExp("\\b" + list + "\\b", "gi");
-          if (texte.match(regExp)) {
-            const span = document.createElement("span");
-            span.style.backgroundColor = "yellow";
-            span.textContent = node.nodeValue.replace(regExp, match => match);
-            node.replaceWith(span);
-          }
-        });
-      }
+function changeWords() {
+    const elements = document.getElementsByTagName("*");
+    for (i=0; i<elements.length; i++) {
+        console.log(elements[i])
+        if (elements[i] == "text de test pour l'extension") {
+            console.log("ok");
+        }else {
+            console.log("pas ok");
+        }
     }
-  }
 }
 
-// Détecter les mots lors du chargement de la page
-window.onload = function() {
-  list.forEach(mot => mettreEnEvidence(mot));
-};
+parseRecettes(api);
