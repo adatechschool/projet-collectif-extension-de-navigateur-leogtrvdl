@@ -54,7 +54,7 @@ function parseRecettes(api) {
             console.log(list);
         })
         .then(function changeColor(){
-            changeWords();
+            changeWords(list);
         })
 }
 
@@ -70,14 +70,17 @@ function checkList(mots) {
     }
 }
 
-function changeWords() {
-    const elements = document.getElementsByTagName("*");
+function changeWords(ingr) {
+    const elements = document.querySelectorAll("*");
     for (i=0; i<elements.length; i++) {
-        console.log(elements[i])
-        if (elements[i] == "text de test pour l'extension") {
-            console.log("ok");
-        }else {
-            console.log("pas ok");
+        let element = elements[i].innerHTML;
+        for (j=0; j<ingr.length; j++) {
+            if (element.includes(ingr[j])) {
+                elements[i].style.color = "red";
+                console.log("ok");
+            } else {
+                
+            }
         }
     }
 }
